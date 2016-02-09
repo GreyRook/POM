@@ -1,0 +1,2 @@
+# POM
+Pixi Objet Manager
