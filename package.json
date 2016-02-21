@@ -1,0 +1,60 @@
+{
+  "name": "POM",
+  "version": "0.0.1",
+  "description": "Pixi Object Model",
+  "author": "Grey Rook Entertainment",
+  "main": "./src/index.js",
+  "homepage": "",
+  "bugs": "",
+  "license": "",
+  "licenseUrl": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test_ci": "testem ci",
+    "test": "karma start test/karma.conf.js",
+    "docs": "jsdoc -c ./gulp/util/jsdoc.conf.json -R README.md"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "brfs": "^1.4.0",
+    "earcut": "^2.0.0",
+    "eventemitter3": "^1.0.1",
+    "object-assign": "^2.0.0",
+    "resource-loader": "^1.5.6"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^9.0.8",
+    "browserify-istanbul": "^0.2.1",
+    "chai": "^2.2.0",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-cached": "^1.0.4",
+    "gulp-concat": "^2.5.2",
+    "gulp-debug": "^2.0.1",
+    "gulp-jshint": "^1.10.0",
+    "gulp-mirror": "^0.4.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "ink-docstrap": "git+https://github.com/Pilatch/docstrap.git",
+    "jasmine-core": "^2.2.0",
+    "jsdoc": "^3.3.0-beta3",
+    "jshint-summary": "^0.4.0",
+    "minimist": "^1.1.1",
+    "mocha": "^2.2.4",
+    "karma-browserify": "^4.2.1",
+    "karma-chai": "^0.1.0",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.0.2",
+    "testem": "^0.8.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.1.2"
+  }
+}
