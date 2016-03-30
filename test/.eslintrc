@@ -1,0 +1,18 @@
+---
+
+env:
+  mocha: true
+
+globals:
+  POM: true
+
+  # test
+  # cannot use env: jasmine, as this would break the setup.js
+  chai: true
+  describe: true
+  it: true
+  expect: true
+
+  # see test/src
+  CustomElement: true
+  generateElementData: true
