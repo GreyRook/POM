@@ -28,6 +28,7 @@
   "devDependencies": {
     "babelify": "*",
     "browserify": "*",
+    "istanbul": "*",
     "browserify-istanbul": "*",
     "chai": "*",
     "del": "*",
