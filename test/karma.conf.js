@@ -29,10 +29,11 @@ module.exports = function(config) {
         // use dolts reporter, as travis terminal does not support escaping sequences
         // possible values: 'dots', 'progress', 'junit', 'teamcity'
         // CLI --reporters progress
-        reporters : ['spec', 'coverage', 'progress'],
+        reporters : ['spec', 'coverage', 'progress', 'coveralls'],
 
         'coverageReporter': {
-            'type' : 'html'
+            type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
+            dir: 'coverage/'
         },
 
         // enable / disable colors in the output (reporters and logs)
