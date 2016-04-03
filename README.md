@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/GreyRook/POM.svg?branch=master)](https://travis-ci.org/GreyRook/POM)
-[![Coverage Status](https://coveralls.io/repos/github/GreyRook/POM/badge.svg?branch=master)](https://coveralls.io/github/GreyRook/POM?branch=master)
+[![Travis branch](https://img.shields.io/travis/GreyRook/POM/master.svg?style=flat-square)](https://travis-ci.org/GreyRook/POM)
+[![Coverage Status](https://img.shields.io/coveralls/GreyRook/POM/master.svg?style=flat-square)](https://coveralls.io/github/GreyRook/POM?branch=master)
 
 # POM - PIXI.js Object Model
 
