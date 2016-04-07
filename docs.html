@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2013 Laurent Bovet <laurent.bovet@windmaster.ch>
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/docson.css">
+    <script src="lib/require.js"></script>
+    <script>
+        require(["docson", "lib/jquery"], function(docson) {
+            $(function () {
+                update();
+                var url;
+                function renderSchema(name, schema,segments){
+                    try{
+                        docson.doc(name, schema, segments[1], segments[0]).done(function() {
+                            //maybeExpand(segments);
+                        });
+                    }catch(e){
+                            error("Could not parse schema: " + e.message + "<pre>" + $('<pre/>').text(schema).html() + "</pre>");
+                    }
+                }
+                function update() {
+                        var base = "assets/";
+                        $.get(base+"schema.json").done(function(schema){
+                            renderSchema("doc", schema,[base, "definitions/elements/ContainerElement"])
+                            renderSchema("doc1", schema,[base, "definitions/elements/SpriteElement"])
+                            renderSchema("doc2", schema,[base, "definitions/elements/GraphicsElement"])
+                        })
+                        }
+
+
+                function maybeExpand(segments) {
+                    if(segments.indexOf("expand") >0 ) {
+                        $("#doc").find(".expand-button").html(" - ").attr("title", "Collapse all");
+                        $("#doc").find(".signature-type-expandable").addClass("signature-type-expanded");
+                        $("#doc").find(".box-container").show();
+                        $("#doc").find(".expand-button").attr("expanded", true);
+                    }
+                }
+
+                function error(message) {
+                    $("#form").show();
+                    $("#doc").html($("<div/>").addClass("error")
+                            .html(message));
+                }
+
+                var doc = $('#doc').get(0);
+                if(embedded) {
+                    doc.onresize =  function(width, height) {
+                        //window.parent.postMessage( { id: "docson", action: "resized", url: url, width: width, height: height}, "*");
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: verdana, helvetica;
+        }
+
+
+        .embedded {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="doc"></div>
+<div id="doc1"></div>
+<div id="doc2"></div>
+
+</body>
+</html>
