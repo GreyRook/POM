@@ -17,13 +17,13 @@ function Manager(data) {
      *
      * @private
      */
-    this._elementPrototypes = {
+    this._elementPrototypes = this._elementPrototypes || {
         'container': ContainerElement,
         'graphics': GraphicsElement,
         'sprite': SpriteElement
     };
 
-    this._plugins = {};
+    this._plugins = this._plugins || {};
 
     ContainerElement.call(this, this, data);
 }

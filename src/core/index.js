@@ -9,7 +9,8 @@
   * @namespace POM
   */
 module.exports = Object.assign(require('./const'), {
-    Manager:             require('./Manager'),
+    Manager:            require('./Manager'),
+    XMLManager:         require('./XMLManager'),
     ContainerElement:   require('./elements/ContainerElement'),
     GraphicsElement:    require('./elements/GraphicsElement'),
     SpriteElement:      require('./elements/SpriteElement')
