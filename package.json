@@ -14,7 +14,7 @@
   "scripts": {
     "test_ci": "testem ci",
     "test": "karma start test/karma.conf.js",
-    "docs": "jsdoc -c ./gulp/util/jsdoc.conf.json -R README.md"
+    "docs": "jsdoc -c ./util/jsdoc.conf.json -R README.md -d ./pages/api"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -44,6 +44,8 @@
     "gulp-util": "*",
     "ink-docstrap": "git+https://github.com/Pilatch/docstrap.git",
     "istanbul": "*",
+    "jsdoc": "*",
+    "jaguarjs-jsdoc": "*",
     "jasmine-core": "*",
     "jsdoc": "*",
     "jshint-summary": "*",
