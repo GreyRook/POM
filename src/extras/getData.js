@@ -7,6 +7,7 @@ function getValues(element) {
 
     for (var i = 0; i < element.dataKeys.length; i++) {
         property = element.dataKeys[i];
+
         try {
             if (typeof property == 'function') {
                 values[property] = element[property]();

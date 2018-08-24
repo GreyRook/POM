@@ -36,10 +36,8 @@ function _setValue(elem, value, key) {
  */
 function updateValues(element, values) {
     // preinitialize variable
-    var elem = element;
-
     for (var property in values) {
-        _setValue(elem, values, property);
+        _setValue(element, values, property);
     }
 }
 

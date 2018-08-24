@@ -1,9 +1,3 @@
-'use strict';
-
-var ContainerElement = require('./elements/ContainerElement'),
-    SpriteElement = require('./elements/SpriteElement'),
-    GraphicsElement = require('./elements/GraphicsElement');
-
 /**
  * POM Manager main container
  * @class Manager
@@ -12,21 +6,27 @@ var ContainerElement = require('./elements/ContainerElement'),
  * @constructor
  */
 function Manager(data) {
-    /**
-     * list of all known element constructors
-     *
-     * @private
-     */
-    this._elementPrototypes = {
-        'container': ContainerElement,
-        'graphics': GraphicsElement,
-        'sprite': SpriteElement
-    };
+  /**
+   * list of all known element constructors
+   *
+   * @private
+   */
+  this._elementPrototypes = {
+    'container': ContainerElement,
+    'graphics': GraphicsElement,
+    'sprite': SpriteElement
+  };
 
-    this._plugins = {};
+  this._plugins = {};
 
-    ContainerElement.call(this, this, data);
+  ContainerElement.call(this, this, data);
 }
+
+'use strict';
+
+var ContainerElement = require('./elements/ContainerElement'),
+    SpriteElement = require('./elements/SpriteElement'),
+    GraphicsElement = require('./elements/GraphicsElement');
 
 Manager.prototype = Object.create(ContainerElement.prototype);
 module.exports = Manager;

@@ -19,7 +19,7 @@ function ContainerElement(manager, data) {
     this.type = 'container';
     this.minWidth = 0;
     this.minHeight = 0;
-    this._hasFlags = this._updateFlags.length > 0;
+    this._hasFlags = this.updateFlags.length > 0;
     this.updateData(data || {});
 }
 
@@ -157,8 +157,8 @@ ContainerElement.prototype.toLocal = function(global, from){
 };
 
 ContainerElement.prototype._checkFlags = function(){
-    for(var i=0, j=this._updateFlags.length;i<j;i++){
-        var flag = this._updateFlags[i];
+    for(var i=0, j=this.updateFlags.length;i<j;i++){
+        var flag = this.updateFlags[i];
 
         if(this[flag.name]){
 
@@ -241,5 +241,14 @@ ContainerElement.prototype.pomContainerUpdateTransform = ContainerElement.protot
 Object.defineProperties(ContainerElement.prototype, {
     dataKeys: {
         get: ContainerElement.prototype._getDataKeys
+    },
+    updateFlags: {
+        get: function(){
+            return this._updateFlags;
+        },
+      set: function(updateFlags) {
+            this._updateFlags = updateFlags;
+            this._hasFlags = true;
+        }
     }
 });
