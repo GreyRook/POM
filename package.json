@@ -31,6 +31,7 @@
     "chai": "*",
     "coveralls": "^2.11.9",
     "del": "*",
+    "gulp": "*",
     "gulp-cached": "*",
     "gulp-concat": "*",
     "gulp-debug": "*",
